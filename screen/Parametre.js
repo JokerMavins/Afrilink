@@ -35,10 +35,6 @@ const Parametre = () => {
 
   return (
     <View style={styles.containerView}>
-        <Header
-        leftComponent = {<MyCustomLeftComponent />}
-        rightComponent = {<MyCustomRightComponent />}
-        />
       <ScrollView showsVerticalScrollIndicator={false} vertical style={styles.containerView}>
         <SafeAreaView style={styles.container}>
             <View style={styles.containerItem}>
@@ -55,20 +51,6 @@ const Parametre = () => {
                         <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                             <MaterialCommunityIcons name="key" style={styles.buttonTitle} />
                             <Text style={styles.buttonTitle}>Mots de passe</Text>
-                        </View>
-                        <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
-                        <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
-                            <MaterialCommunityIcons name="mail" style={styles.buttonTitle} />
-                            <Text style={styles.buttonTitle}>E-mail</Text>
-                        </View>
-                        <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
-                        <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
-                            <MaterialCommunityIcons name="mail" style={styles.buttonTitle} />
-                            <Text style={styles.buttonTitle}>E-mail</Text>
                         </View>
                         <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
                     </TouchableOpacity>
@@ -121,13 +103,6 @@ const Parametre = () => {
                         <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                             <MaterialCommunityIcons name="map-marker" style={styles.buttonTitle} />
                             <Text style={styles.buttonTitle}>Localisation</Text>
-                        </View>
-                        <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
-                        <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
-                            <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                            <Text style={styles.buttonTitle}>Un Text</Text>
                         </View>
                         <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
                     </TouchableOpacity>
@@ -213,7 +188,7 @@ const styles = StyleSheet.create({
     },
     buttonTitle:{
         fontSize: 17,
-        color: '#25009D',
+        color: '#6C6C6C',
         marginHorizontal: 5,
     },
 })

@@ -1,7 +1,9 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
 import { Header, Icon } from 'react-native-elements';
+import { connect } from 'react-redux';
+import Store from '../Store/configureStore';
 
 const {width,height} = Dimensions.get('window');
 const primary = '#2e3190';
@@ -9,14 +11,37 @@ const secondary = '#fab917';
 const fond = '#F7F7F7';
 const article = '#EEE';
 
+const action = {type: 'CONNECT_NOW', value: 'azertyu'};
+
 const AuthChoiceScreen = props => {
+
+    const [v,setV] =useState(null)
 
     const showConnexionScreen = () => {
         props.navigation.navigate('Connexion');
     };
 
+    const showInscriptionScreen = () => {
+        props.navigation.navigate('Inscription');
+    };
+
+    const verifyToken = () => {
+        var sd,ter,data;
+        Store.subscribe(
+            ter = () => {
+                sd = Store.getState();
+                return sd;
+            }
+        )
+        data = ter().connectUser.info;
+        console.log(data);
+            
+        
+    }
+
     return (
         <View style={ styles.container }>
+        {verifyToken()}
             <Header backgroundColor={primary} />
             <View style={ styles.containerBlock }>
                 <Image
@@ -28,10 +53,13 @@ const AuthChoiceScreen = props => {
                 <Text style={ styles.containerText }>Connectez-vous ou inscrivez-vous et procéder à votre achat. Vous pouvez vous connectez par Google ou Facebook
                 </Text>
                 <View style={ styles.buttonContainer }>
-                    <TouchableOpacity onPress={ () => showConnexionScreen() } style={ styles.buttonConnexion }>
+                    <TouchableOpacity onPress={ () => {
+                        props.dispatch(action);
+                        setV('jdj');
+                    } } style={ styles.buttonConnexion }>
                         <Text style={ styles.buttonConnexionText }>Connexion</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={ styles.buttonInscription }>
+                    <TouchableOpacity onPress={ () => showInscriptionScreen() } style={ styles.buttonInscription }>
                         <Text style={ styles.buttonInscriptionText }>Inscription</Text>
                     </TouchableOpacity>
                 </View>
@@ -107,4 +135,10 @@ const styles = StyleSheet.create({
     },
 });
 
-export default AuthChoiceScreen;
+const mapStateToProps = (state) => {
+    return {
+        info: state.connectUser.info
+    }
+}
+
+export default connect(mapStateToProps)(AuthChoiceScreen);

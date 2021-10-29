@@ -9,12 +9,15 @@ const {width,height} = Dimensions.get('window');
 const primary = '#2e3190';
 const secondary = '#fab917';
 const fond = '#F7F7F7';
-const article = '#EEE';
 
 const ConnexionScreen = props => {
+
+    const showInscription = ()=>{
+        props.navigation.navigate('Inscription');
+    };
+
     return (
         <View style={ styles.container }>
-            <Header backgroundColor={primary}/>
             <ScrollView contentContainerStyle={{ justifyContent: 'center'}} style={styles.formContainer}>
                 <View style={styles.formBloc}>
 
@@ -57,7 +60,7 @@ const ConnexionScreen = props => {
                         <Icon name="google-plus" type='font-awesome' size={30} color='red' style={{ marginRight: 12 }} />
                         <Icon name="facebook-square" type='font-awesome' size={30} color='blue' />
                     </View>
-                    <TouchableOpacity style={ styles.signupContainer }><Text style={{ color: '#666' }}>Pas de compte ?</Text><Text style={{ color: primary, fontWeight: 'bold' }}> Créer un compte.</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={ () => showInscription() } style={ styles.signupContainer }><Text style={{ color: '#666' }}>Pas de compte ?</Text><Text style={{ color: primary, fontWeight: 'bold' }}> Créer un compte.</Text></TouchableOpacity>
                 </View>
             </ScrollView>
         </View>
