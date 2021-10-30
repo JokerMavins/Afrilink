@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
 import { Header, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
@@ -34,10 +34,13 @@ const AuthChoiceScreen = props => {
             }
         )
         data = ter().connectUser.info;
-        console.log(data);
-            
         
     }
+
+    useEffect(()=>{
+        console.log(props)
+        console.log(v)
+    },[]);
 
     return (
         <View style={ styles.container }>
@@ -53,10 +56,7 @@ const AuthChoiceScreen = props => {
                 <Text style={ styles.containerText }>Connectez-vous ou inscrivez-vous et procéder à votre achat. Vous pouvez vous connectez par Google ou Facebook
                 </Text>
                 <View style={ styles.buttonContainer }>
-                    <TouchableOpacity onPress={ () => {
-                        props.dispatch(action);
-                        setV('jdj');
-                    } } style={ styles.buttonConnexion }>
+                    <TouchableOpacity onPress={()=>{setV(5)}} style={ styles.buttonConnexion }>
                         <Text style={ styles.buttonConnexionText }>Connexion</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={ () => showInscriptionScreen() } style={ styles.buttonInscription }>

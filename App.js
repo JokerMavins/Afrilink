@@ -10,13 +10,25 @@ import CartScreen from './screen/Cart';
 import UserScreen from './screen/User';
 import MenuScreen from './screen/Menu';
 import AlertScreen from './screen/Alert';
+import Message from './screen/Message';
+import MessageMenu from './screen/MessageMenu';
+import NewBoutique from './screen/createBoutique';
+import NewBoutique1 from './screen/createBoutique1';
+import ValidationBoutique  from './screen/ValidationCreation';
 import AuthChoiceScreen from './screen/AuthChoice';
 import ConnexionScreen from './screen/Connexion';
 import Parametre from './screen/Parametre';
 import OnBoardingView from './screen/OnBoardingView';
+import PrintScreen from './screen/PrintScreen';
 import Notification from './screen/Notification';
 import { Provider } from 'react-redux';
 import Store from './Store/configureStore';
+import Historique from './screen/Historique';
+import Commande from './screen/Commande';
+import FavorisScreen from './screen/Favoris';
+import Conditions from './screen/Conditions';
+import Politique from './screen/Politique';
+import Boutique from './screen/Boutique';
 
 const primary = '#2e3190';
 const secondary = '#fab917';
@@ -61,10 +73,22 @@ const App = () => {
 			<NavigationContainer>
 				<Stack.Navigator>
 					<Stack.Screen options={{ headerShown: false}} name="OnBoard" component={OnBoardingView} />
-					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'} }} name="Parametre" component={Parametre} />
 					<Stack.Screen options={{ headerShown: false }} name="Bottom" component={TabScreen} />
+					<Stack.Screen options={{ headerShown: true,  headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'} }} name="Print" component={PrintScreen} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Parametre" component={Parametre} />
 					<Stack.Screen options={{ headerShown: false }} name="AuthChoiceScreen" component={AuthChoiceScreen} />
-					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'} }} name="Connexion" component={ConnexionScreen} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Connexion" component={ConnexionScreen} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Message" component={Message} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Boutique" component={NewBoutique} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Boutique1" component={NewBoutique1} />
+					<Stack.Screen options={{ headerShown: false, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Validation" component={ValidationBoutique} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Historique" component={Historique} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Commande" component={Commande} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Favorie" component={FavorisScreen} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Politique" component={Politique} />
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Conditions" component={Conditions}/>
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="BoutiqueScreen" component={Boutique}/>
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="MessageMenu" component={MessageMenu}/>
 				</Stack.Navigator>
 			</NavigationContainer>
         </Provider>

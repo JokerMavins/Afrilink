@@ -56,14 +56,12 @@ const HOME_SLIDERS = [
 const HomeScreen = props => {
      return (
         <View style={styles.container}>
-            <StatusBar hidden={false} />
-            <Header backgroundColor={primary}>
+             <StatusBar hidden={false} />
+            <Header barStyle="light-content" backgroundColor={"#2e3190"}>
                 <SearchBar
-                    round
-                    lightTheme
                     placeholder="Rechercher"
-                    containerStyle={{width: width - 20, backgroundColor: primary, }}
-                    inputContainerStyle={{ maxHeight: 40, borderWidth: 0, backgroundColor: fond }}
+                    containerStyle={{width: width - 20, backgroundColor: "#2e3190",borderColor: '#2e3190' }}
+                    inputContainerStyle={{ maxHeight: 40, backgroundColor: fond }}
                     inputStyle={{ backgroundColor: fond }}
                     showCancel
                     cancelIcon

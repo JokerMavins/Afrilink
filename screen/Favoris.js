@@ -20,10 +20,7 @@ const fond = '#F7F7F7';
 const FavorisScreen = props => {
     return (
         <View style={{flex: 1}}>
-            <StatusBar hidden={false} />
-            <Header backgroundColor={primary}
-                leftComponent={<Icon type="feather" name="chevron-left" size={26} color={fond} />}
-            />
+            <StatusBar hidden={false} barStyle="light-content" backgroundColor = {primary}/>
             <ScrollView style={styles.container} contentContainerStyle={{ justifyContent:'center', alignItems:'center' }}>
                 <TouchableOpacity style={styles.wish}>
                     <View style={styles.wishInfo}>

@@ -13,21 +13,6 @@ const Message = () => {
 
     const [messages, setMessages] = useState([]);
 
-    const MyCustomLeftComponent =()=>{
-        return(
-          <View style={{width: 200}}><Text style={{color: 'white', fontSize: 20,marginVertical: 5}}>Messages</Text></View>
-        )
-    }
-  
-    const MyCustomRightComponent =()=>{
-        return(
-          <MaterialCommunityIcons
-              name="select-drag"
-              size={25}
-              color="#fff" />
-        )
-    }
-
     useEffect(() =>{
         setMessages([
             { 
@@ -54,10 +39,6 @@ const Message = () => {
   return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content"/>
-         <Header
-            leftComponent = {<MyCustomLeftComponent />}
-            rightComponent = {<MyCustomRightComponent />}
-        />
           <GiftedChat
             messages={messages}
             onSend={messages => onSend(messages)}

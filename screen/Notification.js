@@ -219,7 +219,7 @@ const Notification = ({navigation}) => {
   const MyCustomRightComponent =()=>{
       return(
         <MaterialCommunityIcons
-            name="select-drag"
+            name="settings-helper"
             size={25}
             color="#fff" />
       )
@@ -227,7 +227,7 @@ const Notification = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content"/>
+      <StatusBar hidden={false} barStyle="light-content" backgroundColor = {primary}/>
       <Header backgroundColor={primary}
         leftComponent = {<MyCustomLeftComponent />}
         rightComponent = {<MyCustomRightComponent />}

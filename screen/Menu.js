@@ -7,7 +7,8 @@ import {
     Dimensions,
     TouchableOpacity,
     ScrollView,
-    SafeAreaView
+    SafeAreaView,
+    StatusBar
 } from 'react-native';
 
 import {
@@ -29,83 +30,84 @@ const MyCustomLeftComponent =()=>{
 const MenuScreen = props => {
      return (
         <View style={styles.container}>
+            <StatusBar hidden={false} barStyle="light-content" backgroundColor = {primary}/>
             <Header backgroundColor={primary}
             leftComponent = {<MyCustomLeftComponent />}
             />
             <ScrollView showsVerticalScrollIndicator={false} vertical style={styles.containerView}>
                 <SafeAreaView style={styles.container}>
                         <View style={styles.card}>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Supermarchés</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Mode et Beauté</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Electronique et Electroménager</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Transport</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Sport & Loisirs</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Pour la maison</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Pour enfant</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Materiel Pro</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Agroalimentaire</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Agropastoral</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
-                                    <Text style={styles.buttonTitle}>immobilier</Text>
+                                    <Text style={styles.buttonTitle}>Immobilier</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Restauration</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Santé & Bien etre</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Inventaire</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Print')} style={styles.button}>
                                 <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                                     <Text style={styles.buttonTitle}>Communication, Finance & Droit</Text>
                                 </View>

@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React,{useState,useEffect} from 'react';
-import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity,ScrollView } from 'react-native';
 import { Icon, Image } from 'react-native-elements';
 import AuthChoiceScreen from './AuthChoice';
 import { connect } from 'react-redux';
@@ -12,11 +12,13 @@ const {width,height} = Dimensions.get('window');
 const WIDTH = width - 150;
 const secondary = '#fab917';
 
-const ProfileScreen = () => (
-    <View style={{ flex:1, backgroundColor: fond, justifyContent: 'center', alignItems: 'center',}} >
-        <View style={{alignItems: 'center'}}>
+const ProfileScreen = props => (
+    <ScrollView vertical style={{marginTop: height * 0.05,backgroundColor: fond}}>
+        <View style={{ flex:1, justifyContent: 'center', alignItems: 'center',marginVertical: 30}} >
+            <View style={{alignItems: 'center'}}>
                 <Image source={require('../assets/24-248729_stockvader-predicted-adig-user-profile-image-png-transparent.png') } style={{width: WIDTH, height: WIDTH,}} />
                 <Text style={styles.surname}>John Doe</Text>
+                <Text style={styles.info}>exemple@gmail|+229 6284 5684</Text>
             </View>
             <View style={styles.block1}>
                 <TouchableOpacity style={styles.optionContainer}>
@@ -24,11 +26,47 @@ const ProfileScreen = () => (
                         <Icon name="gear" type="evilicon" size={35} color="#444" />
                     </View>
                     <View style={styles.actionContainer}>
-                        <Text style={styles.actionText}>Paramètres</Text>
+                        <Text style={styles.actionText}>Paramètres du Compte</Text>
+                        <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=> props.navigation.navigate('MessageMenu')} style={styles.optionContainer}>
+                    <View style={styles.illustrationContainer}>
+                        <Icon name="envelope" type="evilicon" size={35} color="#444" />
+                    </View>
+                    <View style={styles.actionContainer}>
+                        <Text style={styles.actionText}>Message</Text>
                         <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.optionContainer}>
+                    <View style={styles.illustrationContainer}>
+                        <Icon name="location" type="evilicon" size={35} color="#444" />
+                    </View>
+                    <View style={styles.actionContainer}>
+                        <Text style={styles.actionText}>Livraison</Text>
+                        <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.optionContainer}>
+                    <View style={styles.illustrationContainer}>
+                        <Icon name="envelope" type="evilicon" size={35} color="#444" />
+                    </View>
+                    <View style={styles.actionContainer}>
+                        <Text style={styles.actionText}>Inventaire</Text>
+                        <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=> props.navigation.navigate('BoutiqueScreen')} style={styles.optionContainer}>
+                    <View style={styles.illustrationContainer}>
+                        <Icon name="gear" type="evilicon" size={35} color="#444" />
+                    </View>
+                    <View style={styles.actionContainer}>
+                        <Text style={styles.actionText}>Boutique</Text>
+                        <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=> props.navigation.navigate('Commande')} style={styles.optionContainer}>
                     <View style={styles.illustrationContainer}>
                         <Icon name="credit-card" type="evilicon" size={35} color="#444" />
                     </View>
@@ -38,6 +76,15 @@ const ProfileScreen = () => (
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.optionContainer}>
+                    <View style={styles.illustrationContainer}>
+                        <Icon name="envelope" type="evilicon" size={35} color="#444" />
+                    </View>
+                    <View style={styles.actionContainer}>
+                        <Text style={styles.actionText}>Catalogue</Text>
+                        <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=> props.navigation.navigate('Favorie')} style={styles.optionContainer}>
                     <View style={styles.illustrationContainer}>
                         <Icon name="heart" type="evilicon" size={35} color="#444" />
                     </View>
@@ -67,7 +114,8 @@ const ProfileScreen = () => (
                     </View>
                 </TouchableOpacity>
             </View>
-    </View>
+        </View>
+    </ScrollView>
 );
 
 
@@ -87,7 +135,7 @@ const UserScreen = props => {
         if(data.length==0)
             props.navigation.navigate('AuthChoiceScreen')
         else
-            return <ProfileScreen/>
+            return <ProfileScreen {...props}/>
             
         
     }
@@ -109,8 +157,11 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
     },
+    info:{
+        marginVertical: 5
+    },
     block1: {
-        marginVertical: 30,
+        marginVertical: 20,
     },
     block2: {
 

@@ -5,8 +5,22 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {Header} from 'react-native-elements';
 import {Switch,Button, Paragraph, Dialog, Portal, Provider} from 'react-native-paper';
 import Modal from '../Composant/Modal';
+import Share from 'react-native-share';
 
 const {width, height} = Dimensions.get('window');
+
+const myCustomShare = async() =>{
+    const shareOptions = {
+      message: "You can download your african market app with this link please click them",
+      url: 'https://qtmd.org/wp-content/uploads/2019/07/howcuttingdo.jpg'
+    }
+
+    try{
+      const ShareResponse = await Share.open(shareOptions);
+    }catch(error){
+      console.log('error=>',error)
+    }
+  };
 
 
 const MyCustomLeftComponent =()=>{
@@ -24,7 +38,7 @@ const MyCustomRightComponent =()=>{
     )
 }
 
-const Parametre = () => {
+const Parametre = props => {
     //Declaration
     const [isSwitchOn, setIsSwitchOn] = React.useState(false);
     const [isNotifOn, setIsNotifOn] = React.useState(false);
@@ -73,13 +87,6 @@ const Parametre = () => {
                         </View>
                         <Switch value={isSwitchOn} onValueChange={onToggleSwitch} style={styles.buttonTitle} color={"#2e3190"}/>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
-                        <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between'}}>
-                            <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                            <Text style={styles.buttonTitle}>Version</Text>
-                        </View>
-                        <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                    </TouchableOpacity>
                     <TouchableOpacity onPress={{}} style={styles.button}>
                         <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'center'}}>
                             <MaterialCommunityIcons name="exit-to-app" style={styles.buttonTitle} />
@@ -111,21 +118,14 @@ const Parametre = () => {
             <View style={styles.containerItem}>
                 <View style={{marginVertical: 10}}><Text style={styles.tilte}>Support</Text></View>
                 <View style={styles.card}>
-                    <TouchableOpacity style={styles.button}>
-                        <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between'}}>
-                            <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                            <Text style={styles.buttonTitle}>Faq</Text>
-                        </View>
-                        <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity  onPress={()=>props.navigation.navigate('Politique')} style={styles.button}>
                         <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between'}}>
                             <MaterialCommunityIcons name="shield" style={styles.buttonTitle} />
                             <Text style={styles.buttonTitle}>Politique de confidentialité</Text>
                         </View>
                         <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity onPress={() => myCustomShare()} style={styles.button}>
                         <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between'}}>
                             <MaterialCommunityIcons name="group" style={styles.buttonTitle} />
                             <Text style={styles.buttonTitle}>Partager l'application</Text>
@@ -139,7 +139,7 @@ const Parametre = () => {
                         </View>
                         <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity  onPress={()=> props.navigation.navigate('Conditions')} style={styles.button}>
                         <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between'}}>
                             <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
                             <Text style={styles.buttonTitle}>Condition d'utilisation </Text>

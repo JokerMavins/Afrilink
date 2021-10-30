@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { View, Image,Button, Dimensions, TouchableOpacity,Text } from 'react-native';
+import { View, Image,Button, Dimensions, TouchableOpacity,Text,StatusBar } from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
 
 const {height,width} = Dimensions.get("screen");
@@ -43,6 +43,8 @@ const Done = ({...props}) => {
 
 const OnBoardingView = ({navigation}) => {
   return (
+    <View style={{flex: 1}}>
+        <StatusBar hidden={false} barStyle="dark-content" backgroundColor = {"white"}/>
     <Onboarding
     DotComponent={Dots}
     NextButtonComponent={Next}
@@ -71,6 +73,7 @@ const OnBoardingView = ({navigation}) => {
     },
     ]}
   />
+    </View>
     )
 }
 

@@ -8,7 +8,6 @@ const Tab = createMaterialTopTabNavigator();
 
 const Commande =()=> {
   return (
-    <NavigationContainer>
       <Tab.Navigator screenOptions={{
         tabBarActiveTintColor: '#ffffff',
         tabBarLabelStyle: { fontSize: 12 },
@@ -17,7 +16,6 @@ const Commande =()=> {
           <Tab.Screen name="Commande_T" component={Commande_T} options={{ tabBarLabel: 'En Cours' }}/>
           <Tab.Screen name="Commande_C" component={Commande_C} options={{ tabBarLabel: 'Approuver' }}/>
       </Tab.Navigator>
-    </NavigationContainer>
   );
 }
 
@@ -79,8 +77,7 @@ const styles = StyleSheet.create({
     },
     card:{
       padding: 10,
-      elevation: 0.5,
-      borderBottomWidth: 0.05,
+      elevation: 0.3,
       marginVertical: 5,
     }
 })
