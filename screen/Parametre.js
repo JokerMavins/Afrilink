@@ -132,13 +132,6 @@ const Parametre = props => {
                         </View>
                         <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
-                        <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between'}}>
-                            <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                            <Text style={styles.buttonTitle}>Version</Text>
-                        </View>
-                        <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />
-                    </TouchableOpacity>
                     <TouchableOpacity  onPress={()=> props.navigation.navigate('Conditions')} style={styles.button}>
                         <View style={{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between'}}>
                             <MaterialCommunityIcons name="arrow-right" style={styles.buttonTitle} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import {FloatingAction} from 'react-native-floating-action';
 
 const actions=[
@@ -21,7 +21,7 @@ const actions=[
 const Boutique= props =>{
   return (
     <View style={{flex: 1}}>
-      <Text></Text>
+      <TouchableOpacity onPress={()=>props.navigation.navigate('Dashboard')}><Text>dkl,slk,ckl</Text></TouchableOpacity>
       <FloatingAction
           ref={(id) => {{}}}
           actions={actions}

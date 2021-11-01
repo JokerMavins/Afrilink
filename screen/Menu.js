@@ -137,7 +137,6 @@ const MenuScreen = props => {
 const styles = StyleSheet.create({
     containerView: {
         flex: 1,
-        backgroundColor: '#ffff',
     },
     container: {
         flex: 1,

@@ -29,6 +29,9 @@ import FavorisScreen from './screen/Favoris';
 import Conditions from './screen/Conditions';
 import Politique from './screen/Politique';
 import Boutique from './screen/Boutique';
+import Localisation from './screen/Localisation';
+import Dashboard from './screen/Dashboard';
+import AddProduit from './screen/AddProduit';
 
 const primary = '#2e3190';
 const secondary = '#fab917';
@@ -89,6 +92,8 @@ const App = () => {
 					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Conditions" component={Conditions}/>
 					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="BoutiqueScreen" component={Boutique}/>
 					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="MessageMenu" component={MessageMenu}/>
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Localisation" component={Localisation}/>
+					<Stack.Screen options={{ headerShown: true, headerStyle: {backgroundColor: primary,color: 'white'}, headerTitleStyle: {color: 'white'}, headerBackTitleStyle: {color: 'white'}  }} name="Dashboard" component={Dashboard}/>
 				</Stack.Navigator>
 			</NavigationContainer>
         </Provider>

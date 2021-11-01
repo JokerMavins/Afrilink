@@ -13,7 +13,7 @@ const WIDTH = width - 150;
 const secondary = '#fab917';
 
 const ProfileScreen = props => (
-    <ScrollView vertical style={{marginTop: height * 0.05,backgroundColor: fond}}>
+    <ScrollView vertical style={{marginTop: height * 0.02,backgroundColor: fond}}>
         <View style={{ flex:1, justifyContent: 'center', alignItems: 'center',marginVertical: 30}} >
             <View style={{alignItems: 'center'}}>
                 <Image source={require('../assets/24-248729_stockvader-predicted-adig-user-profile-image-png-transparent.png') } style={{width: WIDTH, height: WIDTH,}} />
@@ -39,21 +39,12 @@ const ProfileScreen = props => (
                         <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.optionContainer}>
+                <TouchableOpacity onPress={()=> props.navigation.navigate('Localisation')} style={styles.optionContainer}>
                     <View style={styles.illustrationContainer}>
                         <Icon name="location" type="evilicon" size={35} color="#444" />
                     </View>
                     <View style={styles.actionContainer}>
-                        <Text style={styles.actionText}>Livraison</Text>
-                        <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.optionContainer}>
-                    <View style={styles.illustrationContainer}>
-                        <Icon name="envelope" type="evilicon" size={35} color="#444" />
-                    </View>
-                    <View style={styles.actionContainer}>
-                        <Text style={styles.actionText}>Inventaire</Text>
+                        <Text style={styles.actionText}>Adresse de Livraison</Text>
                         <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
                     </View>
                 </TouchableOpacity>
@@ -72,15 +63,6 @@ const ProfileScreen = props => (
                     </View>
                     <View style={styles.actionContainer}>
                         <Text style={styles.actionText}>Commande</Text>
-                        <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.optionContainer}>
-                    <View style={styles.illustrationContainer}>
-                        <Icon name="envelope" type="evilicon" size={35} color="#444" />
-                    </View>
-                    <View style={styles.actionContainer}>
-                        <Text style={styles.actionText}>Catalogue</Text>
                         <Icon name="chevron-right" type="evilicon" size={35} color="#444" />
                     </View>
                 </TouchableOpacity>
